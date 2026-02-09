@@ -1,0 +1,41 @@
+{
+  "kpis": {
+    "revenue": { "value": 54230, "change": 12.5, "isPositive": true },
+    "users": { "value": 1245, "change": 8.2, "isPositive": true },
+    "orders": { "value": 342, "change": -3.1, "isPositive": false },
+    "conversionRate": { "value": 4.3, "change": 1.8, "isPositive": true }
+  },
+  "revenue": [
+    { "month": "Jan", "revenue": 4000 },
+    { "month": "Feb", "revenue": 3000 },
+    { "month": "Mar", "revenue": 2000 },
+    { "month": "Apr", "revenue": 2780 },
+    { "month": "May", "revenue": 1890 },
+    { "month": "Jun", "revenue": 2390 },
+    { "month": "Jul", "revenue": 3490 },
+    { "month": "Aug", "revenue": 4100 },
+    { "month": "Sep", "revenue": 3800 },
+    { "month": "Oct", "revenue": 4200 },
+    { "month": "Nov", "revenue": 5100 },
+    { "month": "Dec", "revenue": 6230 }
+  ],
+  "orders": [
+    { "month": "Jan", "orders": 24 },
+    { "month": "Feb", "orders": 18 },
+    { "month": "Mar", "orders": 22 },
+    { "month": "Apr", "orders": 29 },
+    { "month": "May", "orders": 19 },
+    { "month": "Jun", "orders": 23 },
+    { "month": "Jul", "orders": 34 },
+    { "month": "Aug", "orders": 31 },
+    { "month": "Sep", "orders": 28 },
+    { "month": "Oct", "orders": 32 },
+    { "month": "Nov", "orders": 38 },
+    { "month": "Dec", "orders": 42 }
+  ],
+  "users": [
+    { "name": "Free Users", "value": 45, "color": "#3b82f6" },
+    { "name": "Premium Users", "value": 35, "color": "#10b981" },
+    { "name": "Enterprise Users", "value": 20, "color": "#f59e0b" }
+  ]
+}

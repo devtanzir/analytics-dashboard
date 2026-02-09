@@ -27,7 +27,7 @@ export function Header({ isCollapsed = false }: HeaderProps) {
   }, [])
 
   return (
-    <header className="sticky top-0 z-30 h-16 border-b border-border bg-[#1C212A]">
+    <header className="sticky top-0 z-30 h-16 border-b border-border bg-background">
       <div className="flex h-full items-center justify-between px-4 lg:px-6">
         <div className="block lg:hidden"></div>
 
