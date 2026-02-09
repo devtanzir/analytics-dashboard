@@ -3,14 +3,14 @@
 import { getKPIs } from '@/services/kpis'
 import { getOrders } from '@/services/orders'
 import { getRevenue } from '@/services/revenue'
-import { fetchUsers } from '@/services/users'
+import { getUsers } from '@/services/users'
 import { useEffect, useState } from 'react'
 
 interface DashboardData {
   kpis: Awaited<ReturnType<typeof getKPIs>>
   revenue: Awaited<ReturnType<typeof getRevenue>>
   orders: Awaited<ReturnType<typeof getOrders>>
-  users: Awaited<ReturnType<typeof fetchUsers>>
+  users: Awaited<ReturnType<typeof getUsers>>
 }
 
 export function useDashboardData() {
@@ -26,7 +26,7 @@ export function useDashboardData() {
           getKPIs(),
           getRevenue(),
           getOrders(),
-          fetchUsers(),
+          getUsers(),
         ])
         
         setData({ kpis, revenue, orders, users })
