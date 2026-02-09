@@ -8,10 +8,20 @@ import useToggler from "@/hooks/useToggler";
 import { navigation } from "@/constants/navItem";
 import MobileMenuButton from "../mobile/mobile-menu-button";
 
-export function Sidebar() {
+  interface SidebarProps {
+  onCollapseChange?: (isCollapsed: boolean) => void
+}
+export function Sidebar({ onCollapseChange }: SidebarProps) {
   const { isToggled, close, toggle } = useToggler();
   const { isToggled: isCollapsed, toggle: toggleCollapsed } = useToggler();
   const pathname = usePathname();
+
+ // Notify parent when collapse state changes
+  const handleToggleCollapse = () => {
+    const newState = !isCollapsed
+    toggleCollapsed()
+    onCollapseChange?.(newState)
+  }
 
   return (
     <>
@@ -43,14 +53,14 @@ export function Sidebar() {
         {/* Header */}
         <div className="h-16 flex items-center justify-between px-4 border-b border-border">
           {!isCollapsed && (
-            <span className="font-semibold text-foreground text-xl">
+            <span className="font-semibold text-foreground text-xl hidden lg:block">
               Analytics
             </span>
           )}
 
           {/* Collapse Button - Desktop Only */}
           <button
-            onClick={toggleCollapsed}
+            onClick={handleToggleCollapse}
             className={cn(
               "hidden lg:flex h-8 w-8 rounded-lg items-center justify-center hover:bg-accent transition-colors",
               isCollapsed && "mx-auto",
