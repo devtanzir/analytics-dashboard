@@ -32,14 +32,14 @@ export function Sidebar({ onCollapseChange }: SidebarProps) {
       {isToggled && (
         <div
           onClick={close}
-          className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
+          className="lg:hidden fixed inset-0 bg-background/80 dark:bg-dark-background/80 backdrop-blur-sm z-40"
         />
       )}
 
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed top-0 left-0 z-40 h-screen bg-card border-r border-border transition-all duration-300",
+          "fixed top-0 left-0 z-40 h-screen bg-card dark:bg-dark-card border-r border-border dark:border-dark-border transition-all duration-300",
           "flex flex-col",
           // Mobile styles
           "lg:translate-x-0",
@@ -51,9 +51,9 @@ export function Sidebar({ onCollapseChange }: SidebarProps) {
         )}
       >
         {/* Header */}
-        <div className="h-16 flex items-center justify-between px-4 border-b border-border">
+        <div className="h-16 flex items-center justify-between px-4 border-b border-border dark:border-dark-border">
           {!isCollapsed && (
-            <span className="font-semibold text-foreground text-xl hidden lg:block">
+            <span className="font-semibold text-foreground dark:text-dark-foreground text-xl hidden lg:block">
               Analytics
             </span>
           )}
@@ -62,13 +62,13 @@ export function Sidebar({ onCollapseChange }: SidebarProps) {
           <button
             onClick={handleToggleCollapse}
             className={cn(
-              "hidden lg:flex h-8 w-8 rounded-lg items-center justify-center hover:bg-accent transition-colors",
+              "hidden lg:flex h-8 w-8 rounded-lg items-center justify-center hover:bg-accent dark:hover:bg-dark-accent transition-colors",
               isCollapsed && "mx-auto",
             )}
           >
             <ChevronLeft
               className={cn(
-                "h-4 w-4 transition-transform text-foreground cursor-pointer",
+                "h-4 w-4 transition-transform text-foreground dark:text-dark-foreground cursor-pointer",
                 isCollapsed && "rotate-180",
               )}
             />
@@ -88,10 +88,10 @@ export function Sidebar({ onCollapseChange }: SidebarProps) {
                 onClick={close}
                 className={cn(
                   "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
-                  "hover:bg-accent hover:text-accent-foreground",
+                  "hover:bg-accent dark:hover:bg-dark-accent hover:text-accent-foreground dark:hover:text-dark-accent-foreground",
                   isActive
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "text-muted-foreground",
+                    ? "bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-dark-primary dark:text-dark-primary-foreground dark:hover:bg-dark-primary/90"
+                    : "text-muted-foreground dark:text-dark-muted-foreground",
                   isCollapsed && "lg:justify-center lg:px-2",
                 )}
                 title={isCollapsed ? item.name : undefined}
@@ -104,7 +104,7 @@ export function Sidebar({ onCollapseChange }: SidebarProps) {
         </nav>
 
         {/* Footer */}
-        <div className="p-4 border-t border-border">
+        <div className="p-4 border-t border-border dark:border-dark-border">
           <div
             className={cn(
               "flex items-center gap-3",
@@ -113,7 +113,7 @@ export function Sidebar({ onCollapseChange }: SidebarProps) {
           >
             {!isCollapsed && (
               <div className="flex-1">
-                <button className="w-full flex items-center justify-start gap-2 px-4 py-2 rounded-lg text-foreground hover:bg-accent transition-colors cursor-pointer">
+                <button className="w-full flex items-center justify-start gap-2 px-4 py-2 rounded-lg text-foreground dark:text-dark-foreground hover:bg-accent dark:hover:bg-dark-accent transition-colors cursor-pointer">
           <LogOut className="h-5 w-5" />
           <span className="hidden sm:inline">Logout</span>
         </button>

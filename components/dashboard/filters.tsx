@@ -13,7 +13,7 @@ const DashboardFilters = () => {
     <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
       {/* Date Range Buttons */}
       <div className="flex items-center gap-2">
-        <Calendar className="h-4 w-4 text-muted-foreground" />
+        <Calendar className="h-4 w-4 text-muted-foreground dark:text-dark-muted-foreground" />
         <div className="flex gap-2 flex-wrap">
           {dateRanges.map((range) => (
             <button
@@ -21,8 +21,8 @@ const DashboardFilters = () => {
               onClick={() => setDateRange(range.value)}
               className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
                 dateRange === range.value
-                  ? 'bg-primary text-primary-foreground'
-                  : 'border border-border text-foreground hover:bg-border/50'
+                  ? 'bg-primary text-primary-foreground dark:bg-dark-primary dark:text-dark-primary-foreground'
+                  : 'border border-border text-foreground hover:bg-border/50 dark:border-dark-border dark:text-dark-foreground dark:hover:bg-dark-border/50'
               }`}
             >
               {range.label}
@@ -35,7 +35,7 @@ const DashboardFilters = () => {
       <div className="relative">
         <button
           onClick={() => setDropdownOpen(!dropdownOpen)}
-          className="w-full sm:w-48 px-4 py-2 bg-card border border-border text-foreground rounded-lg hover:bg-border/50 transition-colors flex items-center justify-between cursor-pointer"
+          className="w-full sm:w-48 px-4 py-2 bg-card dark:bg-dark-card border border-border dark:border-dark-border text-foreground dark:text-dark-foreground rounded-lg hover:bg-border/50 dark:hover:bg-dark-border/50 transition-colors flex items-center justify-between cursor-pointer"
         >
           <span>{userTypes.find(t => t.value === userType)?.label}</span>
           <ChevronDown className={`h-4 w-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
@@ -47,7 +47,7 @@ const DashboardFilters = () => {
               className="fixed inset-0 z-10"
               onClick={() => setDropdownOpen(false)}
             />
-            <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-lg shadow-lg z-20">
+            <div className="absolute top-full left-0 right-0 mt-1 bg-card dark:bg-dark-card border border-border dark:border-dark-border rounded-lg shadow-lg z-20">
               {userTypes.map((type) => (
                 <button
                   key={type.value}
@@ -57,8 +57,8 @@ const DashboardFilters = () => {
                   }}
                   className={`w-full px-4 py-2 text-left transition-colors cursor-pointer ${
                     userType === type.value
-                      ? 'bg-primary/20 text-primary font-medium'
-                      : 'text-foreground hover:bg-primary/10'
+                      ? 'bg-primary/20 text-primary font-medium dark:bg-dark-primary/20 dark:text-dark-primary dark:font-medium'
+                      : 'text-foreground hover:bg-primary/10 dark:text-dark-foreground dark:hover:bg-dark-primary/10'
                   }`}
                 >
                   {type.label}

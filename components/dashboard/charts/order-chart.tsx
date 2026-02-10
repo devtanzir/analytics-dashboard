@@ -6,10 +6,10 @@ export function OrdersChart({ data }: OrdersChartProps) {
 const { theme } = useTheme()
   const isDark = theme === 'dark'
   return (
-    <div className="border border-border bg-card rounded-lg p-6 col-span-1 lg:col-span-2">
+    <div className={`border border-border dark:border-dark-border bg-card dark:bg-dark-card rounded-lg p-6 col-span-1 lg:col-span-2`}>
       <div className="mb-6">
-        <h2 className="text-lg font-semibold text-foreground">Orders Per Month</h2>
-        <p className="text-sm text-muted-foreground">Monthly order count</p>
+        <h2 className="text-lg font-semibold text-foreground dark:text-dark-foreground">Orders Per Month</h2>
+        <p className="text-sm text-muted-foreground dark:text-dark-muted-foreground">Monthly order count</p>
       </div>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data}>

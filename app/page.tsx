@@ -23,12 +23,12 @@ export default function Home() {
         className={`transition-all duration-300 ${isCollapsed ? "lg:ml-16" : "lg:ml-64"}`}
       >
         <Header isCollapsed={isCollapsed} />
-        <main className="min-h-[calc(100vh-4rem)] bg-background">
+        <main className="min-h-[calc(100vh-4rem)] bg-background dark:bg-dark-background transition-colors duration-300">
           <div className="p-4 md:p-8 space-y-8">
             {/* Title */}
             <div>
-              <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
-              <p className="text-muted-foreground mt-1">
+              <h1 className="text-3xl font-bold text-foreground dark:text-dark-foreground">Dashboard</h1>
+              <p className="text-muted-foreground dark:text-dark-muted-foreground mt-1">
                 Welcome back! Here&apos;s your business performance overview.
               </p>
             </div>
