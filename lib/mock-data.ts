@@ -10,7 +10,7 @@ export const filterData = (
   data:  Revenue[],
   range: DateRange
 ) => {
-  const sliceMap = { '7d': 7, '30d': 30, '12m': 12 }
+  const sliceMap = { '7d': 7, '30d': 3, '12m': 12 }
   const sliceAmount = sliceMap[range]
   const filtered = data.slice(Math.max(0, data.length - sliceAmount))
   return filtered
