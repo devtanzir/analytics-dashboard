@@ -1,6 +1,5 @@
 "use client"
 import { AlertTriangle } from 'lucide-react';
-import Link from 'next/link';
 
 const ErrorPage = () => {
     return (
@@ -9,11 +8,6 @@ const ErrorPage = () => {
             <p className='text-sm text-muted-foreground'>
                 Something went wrong
             </p>
-            <button className='px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition'>
-                <Link href={"/"}>
-                Back to home
-                </Link>
-            </button>
         </div>
     );
 };

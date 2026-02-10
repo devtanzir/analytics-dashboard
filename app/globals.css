@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-} 
+}
 
 @theme {
   /* Light mode colors */
@@ -17,14 +19,25 @@ body {
   --color-accent: hsl(210 40% 96.1%);
   --color-accent-foreground: hsl(222.2 47.4% 11.2%);
   --color-border: hsl(214.3 31.8% 91.4%);
+
+  /* Colors for dark */
+    --color-dark-background: hsl(222.2 84% 4.9%);
+    --color-dark-foreground: hsl(210 40% 98%);
+    --color-dark-card: hsl(222.2 84% 4.9%);
+    --color-dark-card-foreground: hsl(210 40% 98%);
+    --color-dark-primary: hsl(239 84% 67%);
+    --color-dark-primary-foreground: hsl(222.2 47.4% 11.2%);
+    --color-dark-muted: hsl(217.2 32.6% 17.5%);
+    --color-dark-muted-foreground: hsl(215 20.2% 65.1%);
+    --color-dark-accent: hsl(217.2 32.6% 17.5%);
+    --color-dark-accent-foreground: hsl(210 40% 98%);
+    --color-dark-border: hsl(217.2 32.6% 17.5%);
   
-  /* Radius */
   --radius-lg: 0.5rem;
 }
 
-/* Dark mode - @media approach */
-/* @media (prefers-color-scheme: dark) {
-  :root {
+ /* .dark {
+  @theme {
     --color-background: hsl(222.2 84% 4.9%);
     --color-foreground: hsl(210 40% 98%);
     --color-card: hsl(222.2 84% 4.9%);
@@ -37,19 +50,4 @@ body {
     --color-accent-foreground: hsl(210 40% 98%);
     --color-border: hsl(217.2 32.6% 17.5%);
   }
-} */
-
-/* Dark class override */
-/* .dark {
-  --color-background: hsl(222.2 84% 4.9%);
-  --color-foreground: hsl(210 40% 98%);
-  --color-card: hsl(222.2 84% 4.9%);
-  --color-card-foreground: hsl(210 40% 98%);
-  --color-primary: hsl(239 84% 67%);
-  --color-primary-foreground: hsl(222.2 47.4% 11.2%);
-  --color-muted: hsl(217.2 32.6% 17.5%);
-  --color-muted-foreground: hsl(215 20.2% 65.1%);
-  --color-accent: hsl(217.2 32.6% 17.5%);
-  --color-accent-foreground: hsl(210 40% 98%);
-  --color-border: hsl(217.2 32.6% 17.5%);
-} */
+}  */
