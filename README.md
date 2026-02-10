@@ -72,7 +72,7 @@ The project demonstrates real-world frontend practices including reusable compon
 ---
 
 ## Project Structure
-
+```bash
 src/
 ├── app/
 │ ├── layout.tsx # Root layout
@@ -94,7 +94,7 @@ src/
 │
 └── hooks/
 └── custom hooks
-
+```
 ---
 
 ## Setup Instructions
@@ -163,7 +163,6 @@ http://localhost:3000
 
 ![Dark Mode](public/readme//project-banner.png)
 ![Mobile View](public/readme/mobile-view.png)
-![User Distribution](public/readme/user-chart.png)
 ![Charts](public/readme/charts.png)
 
 ## Notes for Reviewers
